@@ -1,4 +1,5 @@
 import turtle
+import random
 class Apple(turtle.Turtle):
     def __init__(self, x, y, size):
         super().__init__()
@@ -13,6 +14,10 @@ class Apple(turtle.Turtle):
     def grow(self):
         self.radius += self.growing_speed
         self.shapesize(self.radius)
+    def refresh(self):
+        self.goto(random.randint(-200,200), random.randint(-200,200))
+        self.shapesize(self.radius)
+        
     
 if __name__ == "__main__":
     apple  = Apple(0,0,0.5)

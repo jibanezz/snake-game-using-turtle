@@ -8,20 +8,12 @@ class Snake(turtle.Turtle):
         self.color("pink")
         self.direction = start_direction
         self.segments = [self]
-        self.create_segments()
         self.head = self.segments[0]
         self.goto(start_position)
     
-    def create_segments(self):
-        for _ in range(len(self.segments) - 1):
-            new_segment = self.clone()
-            new_segment.goto(0, 0)
-            self.segments.append(new_segment)
+    
     
     def move(self):
-        for index in range(len(self.segments) - 1, 0, -1):
-            x, y = self.segments[index - 1].xcor(), self.segments[index - 1].ycor()
-            self.segments[index].goto(x, y)
         self.head.forward(1)
     
     def up(self):
@@ -56,5 +48,6 @@ if __name__ == "__main__":
     while True:
     
         snake.move()
+        
     
     turtle.mainloop()

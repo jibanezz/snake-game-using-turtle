@@ -16,7 +16,6 @@ class Apple(turtle.Turtle):
         self.shapesize(self.radius)
     def refresh(self):
         self.goto(random.randint(-200,200), random.randint(-200,200))
-        self.shapesize(self.radius)
         
     
 if __name__ == "__main__":

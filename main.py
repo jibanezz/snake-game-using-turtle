@@ -1,7 +1,7 @@
 import turtle
 from apple import Apple
 from snake import Snake
-
+import time
 apple = Apple(0,0,0.5)
 
 snake = Snake((0, 0), "right")
@@ -13,8 +13,11 @@ turtle.onkey(snake.down, "Down")
 while True:
 
     snake.move()
-    if snake.head.distance(apple.pos) < 15:
+    time.sleep(0.5)
+    if abs(snake.head.xcor() - apple.xcor())<15 and abs(snake.head.ycor() - apple.ycor()) < 15:
         apple.refresh()
+        snake.extend()
+        
         
     
 
